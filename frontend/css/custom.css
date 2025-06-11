@@ -1,0 +1,122 @@
+/* custom.css - Estilos personalizados para MiFlix */
+
+/* Variables de colores estilo Netflix */
+:root {
+  --netflix-red: #e50914;
+  --netflix-dark: #141414;
+  --netflix-gray: #333333;
+  --netflix-light-gray: #b3b3b3;
+}
+
+/* Body y fondos */
+body {
+  background-color: var(--netflix-dark);
+  color: white;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Navbar personalizada */
+.navbar-brand {
+  color: var(--netflix-red) !important;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: var(--netflix-red) !important;
+}
+
+/* Carrusel */
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+/* Tarjetas de películas */
+.movie-card {
+  background-color: var(--netflix-gray);
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  z-index: 2;
+}
+
+.movie-card .card-title {
+  color: white;
+  font-weight: bold;
+}
+
+.movie-card .card-text {
+  color: var(--netflix-light-gray);
+}
+
+/* Contenedores */
+.container h2 {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* Formularios de login y registro */
+.btn-primary {
+  background-color: var(--netflix-red);
+  border-color: var(--netflix-red);
+}
+
+.btn-primary:hover {
+  background-color: #b81d24;
+  border-color: #b81d24;
+}
+
+.btn-success {
+  background-color: var(--netflix-red);
+  border-color: var(--netflix-red);
+}
+
+.btn-success:hover {
+  background-color: #b81d24;
+  border-color: #b81d24;
+}
+
+/* Efectos de carga */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.spinner {
+  border: 4px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  border-top: 4px solid var(--netflix-red);
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-item img {
+      height: 250px;
+  }
+  
+  .movie-card:hover {
+      transform: none;
+  }
+}
